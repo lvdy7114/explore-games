@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import apiClient from '../services/api-client';
+import { Button, List, ListItem } from '@chakra-ui/react';
 
 const GenreList = () => {
     const [genres, setGenres] = useState([]);
@@ -19,10 +20,12 @@ const GenreList = () => {
     }, []);
 
   return (
-    <ul>
+    <List>
     {error && <p>{error}</p>}
-    {genres.map(genres => <li key={genres.id}>{genres.name}</li>)}
-    </ul>
+    {genres.map(genres => 
+    <ListItem key={genres.id} paddingY='2px'>
+    <Button onClick={() => console.log(genres)} variant='link'>{genres.name}</Button></ListItem>)}
+    </List>
   )
 }
 
