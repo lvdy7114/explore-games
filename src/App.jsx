@@ -6,6 +6,10 @@ import GenreList from "./components/GenreList"
 
 
 function App() {
+  const handleSearch = (searchQuery) => {
+    console.log('Search query:', searchQuery);
+  };
+  
   return ( 
   <Grid 
   templateAreas={{
@@ -13,7 +17,7 @@ function App() {
     lg: `"nav nav" "aside main"`,
   }}>
     <GridItem area="nav">
-    <NavBar />
+    <NavBar onSearch={handleSearch} />
     </GridItem>
     
     <Show above="lg">

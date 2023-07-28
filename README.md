@@ -16,4 +16,5 @@
 15. Included game card with background_image and name of game from api. Used ps e.g.
 16. Added platform, may add icon label for each platform later
 17. Added a list of genres aside using same way of fetching games.
-18.
+18. Used react icons from chakra ui. https://chakra-ui.com/docs/components/icon/usage, for search bar.
+19. Using this method: https://github.com/lvdy7114/week_ten/blob/main/day_five/tek-usereducer/src/App.jsx and https://github.com/lvdy7114/week_ten/blob/main/day_two/react_movie_search/lab/src/App.jsx to search

@@ -6,11 +6,11 @@ import SearchInput from './SearchInput';
 
 
 
-export const NavBar = () => {
+export const NavBar = ({onSearch}) => {
   return (
    <HStack padding='10px'>
     <Image src={logo} boxSize='40px' borderRadius='10px' />
-    <SearchInput />
+    <SearchInput onSearch={onSearch} />
     <ColorModeSwitch />
    </HStack>
   )
