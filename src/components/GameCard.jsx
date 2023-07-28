@@ -9,7 +9,7 @@ const GameCard = ({ game }) => {
     <Card borderRadius={10} overflow='hidden'>
         <Image src={game.background_image} />
       <CardBody>
-      <Heading fontSize='2xl'>{game.name}</Heading>
+      <Heading fontSize='2xl' marginBottom={2}>{game.name}</Heading>
       <Accordion allowMultiple>
           {/* Accordion Item for Platforms */}
           <AccordionItem>
