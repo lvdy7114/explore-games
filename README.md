@@ -13,4 +13,5 @@
 13. In App.js: added opening parentheses after return and closed it at the bottom. imported React
 14. Set up gamegrid component to fetch api of list of games. Used ps example:
     https://github.com/lvdy7114/week_ten/blob/main/day_four/lab/react-star-wars/src/App.jsx. installed axios to fetch. used useeffect hook. imported gamegrid component and put in tag in app.js
-15.
+15. Included game card with background_image and name of game from api. Used ps e.g.
+16. Added platform, may add icon label for each platform later
