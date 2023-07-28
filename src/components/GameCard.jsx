@@ -25,7 +25,7 @@ const GameCard = ({ game }) => {
               <Text fontSize="sm">{platformNames.join(', ')}</Text>
             </AccordionPanel>
           </AccordionItem>
-          {/* Accordion Item for Description */}
+          {/* Accordion Item for Ratings */}
           <AccordionItem>
             <h2>
               <AccordionButton>
