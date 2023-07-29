@@ -1,36 +1,34 @@
-import React, { useEffect, useState } from 'react';
-import apiClient from '../services/api-client';
-import { SimpleGrid } from '@chakra-ui/react';
+import React, { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux'; 
+import { SimpleGrid, Text } from '@chakra-ui/react';
 import GameCard from './GameCard';
+import { fetchGames, selectSearchQuery } from '../state/gameSlice';
 
 
 
 const GameGrid = () => {
-    const [games,setGames] = useState([]);
-    const [error, setError] = useState('');
+    const dispatch = useDispatch();
+    const games = useSelector((state) => state.games.data);
+    const error = useSelector((state) => state.games.error);
+    const searchQuery = useSelector(selectSearchQuery);
 
     useEffect(() => {
-        const fetchGames = async () => {
-            try {
-                const response = await apiClient.get('/games');
-                setGames(response.data.results)
-            } catch (error) {
-                setError('Error fetching games');
-            }
-        };
+        dispatch(fetchGames());
+      }, [dispatch]);
 
-        fetchGames();
-    }, []);
+      if (error) return <Text>{error}</Text>;
 
-    if (error) return <Text>{error}</Text>
+      //filter games based on search query
+      const filteredGames = games.filter((game) => 
+      game.name.toLowerCase().includes(searchQuery.toLowerCase())
+      );
 
-    return (
-          <SimpleGrid columns={{sm: 1, md: 2, lg: 3, xl: 5}} padding='10px' spacing={5}>
-          {games.map((game) => (
+      return (
+        <SimpleGrid columns={{ sm: 1, md: 2, lg: 3, xl: 5 }} padding='10px' spacing={5}>
+          {filteredGames.map((game) => (
             <GameCard key={game.id} game={game} />
           ))}
-          </SimpleGrid>
+        </SimpleGrid>
       );
     };
-
-export default GameGrid
+    export default GameGrid;

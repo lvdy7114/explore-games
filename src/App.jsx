@@ -17,13 +17,13 @@ function App() {
     lg: `"nav nav" "aside main"`,
   }}>
     <GridItem area="nav">
-    <NavBar onSearch={handleSearch} />
+   <NavBar onSearch={handleSearch} />
     </GridItem>
     
     <Show above="lg">
     <GridItem area="aside" paddingX='5px'>
     <GenreList />
-    </GridItem>
+    </GridItem>                                                                                                       
     </Show>
     <GridItem area="main">
     <GameGrid />
