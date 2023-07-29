@@ -6,6 +6,7 @@ export const fetchGames = createAsyncThunk('games/fetchGames', async () => {
   const response = await apiClient.get('/games');
   return response.data.results;
 });
+
 const gamesSlice = createSlice({
   name: 'games',
   initialState: {
@@ -13,10 +14,14 @@ const gamesSlice = createSlice({
     loading: false,
     error: null,
     searchQuery: '',
+    selectedGenres: null,
   },
   reducers: {
     setSearchQuery: (state, action) => {
       state.searchQuery = action.payload;
+    },
+    setSelectedGenre: (state, action) => {
+      state.selectedGenres = action.payload;
     },
   },
   extraReducers: (builder) => {
@@ -36,8 +41,9 @@ const gamesSlice = createSlice({
   },
 });
 
-export const { setSearchQuery } = gamesSlice.actions;
+export const { setSearchQuery, setSelectedGenre } = gamesSlice.actions;
 
 export const selectSearchQuery = (state) => state.games.searchQuery;
+export const selectSelectedGenre = (state) => state.games.selectedGenres;
 
 export default gamesSlice.reducer;

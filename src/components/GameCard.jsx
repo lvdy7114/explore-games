@@ -37,7 +37,7 @@ const GameCard = ({ game }) => {
             </h2>
             <AccordionPanel>
               <Text fontSize="sm">Metacritic: {game.metacritic}<br/>
-                                  Rating: {game.rating}</Text>
+                                  Rating: {game.rating} </Text>
             </AccordionPanel>
           </AccordionItem>
         </Accordion>
