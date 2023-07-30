@@ -1,34 +1,26 @@
 import React from "react"
-import { Grid, GridItem,Show } from "@chakra-ui/react"
-import { NavBar } from "./components/NavBar"
-import GameGrid from "./components/GameGrid"
-import GenreList from "./components/GenreList"
+import { Route, BrowserRouter as Router, Routes } from "react-router-dom"
+import Home from "./pages/Home"
+import Layout from "./pages/Layout"
+import GameDetails from "./pages/GameDetails"
+
 
 
 function App() {
-  const handleSearch = (searchQuery) => {
-    console.log('Search query:', searchQuery);
-  };
-  
+
   return ( 
-  <Grid 
-  templateAreas={{
-    base: `"nav main"`,
-    lg: `"nav nav" "aside main"`,
-  }}>
-    <GridItem area="nav">
-   <NavBar onSearch={handleSearch} />
-    </GridItem>
-    
-    <Show above="lg">
-    <GridItem area="aside" paddingX='5px'>
-    <GenreList />
-    </GridItem>                                                                                                       
-    </Show>
-    <GridItem area="main">
-    <GameGrid />
-    </GridItem>
-  </Grid>  
+
+    <Router>
+      <div className="app">
+        <Routes>
+          <Route path="/" element={<Layout />}>
+          <Route index element={<Home />} />
+          </Route>
+          <Route path="games/:id" element={<GameDetails />} />
+        </Routes>
+      </div>
+    </Router>
+  
   )                                
 }
 

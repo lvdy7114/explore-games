@@ -19,4 +19,5 @@
 18. Used react icons from chakra ui. https://chakra-ui.com/docs/components/icon/usage, for search bar.
 19. Using this method: https://github.com/lvdy7114/week_ten/blob/main/day_five/tek-usereducer/src/App.jsx and https://github.com/lvdy7114/week_ten/blob/main/day_two/react_movie_search/lab/src/App.jsx to search
 20. Looking into using reducer to manage state logic
-21. Will not use context or usereducer for state management. When set it up this way, it fetches data and returns in an infinite loop in dev tools. Will use redux toolkit for state management.
+21. Will not use context or usereducer for state management. Will use redux toolkit for state management.
+22. Completed look so far. Will be including react routing to navigate to get description of each game. https://github.com/lvdy7114/week_ten/tree/main/day_four/practice/tek-react-router
