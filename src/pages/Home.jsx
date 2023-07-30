@@ -5,6 +5,7 @@ import GenreList from "../components/GenreList"
 
 const Home = () => {
     return (
+        <>
         <Grid
             templateAreas={{
                 base: `"main"`,
@@ -20,6 +21,7 @@ const Home = () => {
                 <GameGrid/>
             </GridItem>
         </Grid>
+        </>
     )
 }
 

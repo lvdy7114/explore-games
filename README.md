@@ -21,3 +21,5 @@
 20. Looking into using reducer to manage state logic
 21. Will not use context or usereducer for state management. Will use redux toolkit for state management.
 22. Completed look so far. Will be including react routing to navigate to get description of each game. https://github.com/lvdy7114/week_ten/tree/main/day_four/practice/tek-react-router
+23. Set up error page, the error msg does not appear, only the navbar, will work on later.
+24.

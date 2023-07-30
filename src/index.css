@@ -2,6 +2,13 @@ form {
     width: 100%;
 }
 
-.active-genre {
-    color: green;
+.game-card {
+    max-width: 100%;
+    overflow: hidden;
+    transition: .15s ease-in;
+    border-radius: 10px;
+}
+
+.game-card:hover {
+    transform: scale(1.05);
 }

@@ -1,15 +1,19 @@
-import { Card, CardBody, Heading, Image, Text, HStack, Accordion,AccordionItem,AccordionButton,AccordionPanel,AccordionIcon } from '@chakra-ui/react'
+import { Card, CardBody, Heading, Image, Text, HStack, Accordion,AccordionItem,AccordionButton,AccordionPanel,AccordionIcon, Box } from '@chakra-ui/react'
 import React from 'react'
+import { Link } from 'react-router-dom';
 
 const GameCard = ({ game }) => {
     const platformNames = game.platforms.map(({ platform }) => platform.name);
    
 
   return (
-    <Card borderRadius={10} overflow='hidden'>
+    <Card className='game-card'>
         <Image src={game.background_image} />
       <CardBody>
-      <Heading fontSize='2xl' marginBottom={2}>{game.name}</Heading>
+      <Heading fontSize='2xl' marginBottom={2}>
+      <Link to={'/games/' + game.slug}>{game.name}</Link>
+      
+      </Heading>
       <Accordion allowMultiple>
           {/* Accordion Item for Platforms */}
           <AccordionItem>

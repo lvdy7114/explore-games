@@ -14,11 +14,11 @@ function App() {
         <Routes>
           <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
+          <Route path="games/:slug" element={<GameDetails />} />
           <Route path="*" element={<Outlet />} >
           <Route index element={<ErrorPage />} />
           </Route>
           </Route> 
-          <Route path="games/:id" element={<GameDetails />} />
         </Routes>
       </div>
     </Router>
