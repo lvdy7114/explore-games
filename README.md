@@ -25,3 +25,5 @@
 24. Tried to include a trailer and/or screenshot but having trouble. Scrapping it. Will just have name, release date, and details of game. There is a refresh and can click on the logo to go back to the home page.
 25. Added ESRB rating and additional background image. When in link for game details search works and can click on logo to go to home page.
 26. So far, happy with how it looks. Just need to go back to fix ErrorPage and possibly add some loading features.
+27. Error page fixed, displays error msg when routed to the wrong page.
+28. Worked on links to be active, tried navlinks with react routing, but doesn't work as good. It highlights the whole list of genres. It's the way the data fetches the api for genre. Decided to use chakra ui box as a custom button. https://chakra-ui.com/docs/components/button/usage.

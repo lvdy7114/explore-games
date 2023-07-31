@@ -1,4 +1,4 @@
-import { Card, CardBody, Heading, Image, Text, HStack, Accordion,AccordionItem,AccordionButton,AccordionPanel,AccordionIcon, Box } from '@chakra-ui/react'
+import { Card, CardBody, Heading, Image, Text, Accordion,AccordionItem,AccordionButton,AccordionPanel,AccordionIcon } from '@chakra-ui/react'
 import React from 'react'
 import { Link } from 'react-router-dom';
 

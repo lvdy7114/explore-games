@@ -1,5 +1,5 @@
 import React from "react"
-import { Outlet, Route, BrowserRouter as Router, Routes } from "react-router-dom"
+import { Route, BrowserRouter as Router, Routes } from "react-router-dom"
 import Home from "./pages/Home"
 import Layout from "./pages/Layout"
 import GameDetails from "./pages/GameDetails"
