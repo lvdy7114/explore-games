@@ -20,7 +20,8 @@ _Approach taken_
 
 4. Added a list of genres at the aside bar. Fetched genres list. This one had a different endpoint, used the useState hook.
 
-5. Used react icons from chakra ui. https://chakra-ui.com/docs/components/icon/usage, for search bar. Started to build out search bar and function.
+5. Used react icons from chakra ui. https://chakra-ui.com/docs/components/icon/usage, for search bar. Started to build out search bar and function. Used useRef in search input, before it appeared like it just kept re-rendering searches in an infinite loop, so used this to stop that.
+   https://react.dev/reference/react/useRef
 
 6. At first attempted to use reducer and context to manage state, as I kept adding more state logic in, it was not working smoothly and it was starting to get complex. Decided to use the redux toolkit for state management. Used some tips from Redux Essentials example.
 
