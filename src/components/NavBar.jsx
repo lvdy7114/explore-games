@@ -15,7 +15,7 @@ export const NavBar = ({onSearch, onRefresh}) => {
   return (
    <HStack padding='10px'>
    <Link to="/">
-    <Image src={logo} boxSize='40px' borderRadius='10px' />
+    <Image src={logo} boxSize='40px' borderRadius='10px' objectFit='cover' />
    </Link>
     <IconButton
     aria-label='Refresh Icon'

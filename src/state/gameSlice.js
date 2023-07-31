@@ -25,6 +25,8 @@ const gamesSlice = createSlice({
     name: '', 
     released: '', 
     details: '',
+    background_image_additional: '',
+    esrb_rating: '',
   },
   },
   reducers: {
@@ -39,10 +41,14 @@ const gamesSlice = createSlice({
         name,
         details,
         released,
+        background_image_additional,
+        esrb_rating,
       } = action.payload;
       state.currentGame.name = name;
       state.currentGame.details = details;
       state.currentGame.released = released;
+      state.currentGame.background_image_additional = background_image_additional;
+      state.currentGame.esrb_rating = esrb_rating;
   },
 },
   extraReducers: (builder) => {
