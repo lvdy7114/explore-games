@@ -7,6 +7,12 @@ export const fetchGames = createAsyncThunk('games/fetchGames', async () => {
   return response.data.results;
 });
 
+export const fetchGameById = createAsyncThunk('games/fetchGameById', async (id) => {
+  const response = await apiClient.get(`/games/${id}`);
+  return response.data;
+});
+
+
 const gamesSlice = createSlice({
   name: 'games',
   initialState: {
@@ -15,6 +21,11 @@ const gamesSlice = createSlice({
     error: null,
     searchQuery: '',
     selectedGenres: null,
+  currentGame: {
+    name: '', 
+    released: '', 
+    details: '',
+  },
   },
   reducers: {
     setSearchQuery: (state, action) => {
@@ -23,7 +34,17 @@ const gamesSlice = createSlice({
     setSelectedGenre: (state, action) => {
       state.selectedGenres = action.payload;
     },
+    setGameDetails: (state, action) => {
+      const {
+        name,
+        details,
+        released,
+      } = action.payload;
+      state.currentGame.name = name;
+      state.currentGame.details = details;
+      state.currentGame.released = released;
   },
+},
   extraReducers: (builder) => {
     builder
       .addCase(fetchGames.pending, (state) => {
@@ -34,10 +55,14 @@ const gamesSlice = createSlice({
         state.loading = false;
         state.data = action.payload;
       })
+      .addCase(fetchGameById.fulfilled, (state, action) => {
+        state.loading = false;
+        state.currentGame = action.payload; 
+      })
       .addCase(fetchGames.rejected, (state, action) => {
         state.loading = false;
         state.error = 'Error fetching games';
-      });
+      })
   },
 });
 
