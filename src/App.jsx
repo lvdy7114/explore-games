@@ -5,8 +5,6 @@ import Layout from "./pages/Layout"
 import GameDetails from "./pages/GameDetails"
 import ErrorPage from "./pages/ErrorPage"
 
-
-
 function App() {
   return ( 
     <Router>
@@ -15,9 +13,7 @@ function App() {
           <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
           <Route path="games/:slug" element={<GameDetails />} />
-          <Route path="*" element={<Outlet />} >
-          <Route index element={<ErrorPage />} />
-          </Route>
+          <Route path="*" element={<ErrorPage />} />
           </Route> 
         </Routes>
       </div>
