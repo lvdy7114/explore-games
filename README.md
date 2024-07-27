@@ -1,6 +1,6 @@
 React Skills Based Assessment with Per Scholas
 
-Explore games
+
 Explore games is a way to explore and get details about video games by search or by genre.
 
 _Technologies used_  
